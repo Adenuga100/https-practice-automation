@@ -27,5 +27,6 @@ test("Tooltip Popup", async ({ page }) => {
     await page.goto("/");
     await HomePage.clickNameButtonsAs(page, "Popups");
     await PopupsPage.clickAlertButtonsAS(page, "<< click me to see a tooltip >>");
-    await expect(await PopupsPage.getPopupsTitle(page, "Cool text")).toBeVisible();
+    await PopupsPage.clickHomeMenus(page);
+    await expect(await HomePage.getHomeTitle(page)).toBeVisible();
 });

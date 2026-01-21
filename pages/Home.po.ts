@@ -12,4 +12,11 @@ export class HomePage {
         let ajaxDataLoadingBtn = page.getByText('Load AJAX Data'); 
        return await ajaxDataLoadingBtn.click();
     }
+
+  static  getHomeTitle(page: Page): Locator {
+    const homeTitle = page.getByText('Welcome to your software automation practice website!'); 
+
+   return homeTitle;
+
+  }
 }

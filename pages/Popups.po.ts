@@ -8,6 +8,13 @@ export class PopupsPage {
 
     }
 
+    static async clickHomeMenus(page: Page): Promise<void> {
+        let homeMenu = page.getByText("Home"); 
+        
+       return await homeMenu.click();
+
+    }
+
     static async getPopupsTitle(page: Page, text: string): Promise<Locator> {
         let alert = page.getByText(text); 
        return  alert;
