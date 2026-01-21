@@ -2,7 +2,7 @@ import { Locator, Page } from "@playwright/test";
 
 export class HomePage {
 
-    static  async clickNameButtonsBytext (page : Page, text: string): Promise<void> {
+    static  async clickNameButtonsAs(page : Page, text: string): Promise<void> {
       let delay = await page.getByText(text).click();
       return delay;
     }
