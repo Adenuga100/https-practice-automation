@@ -1,4 +1,4 @@
-import test from "@playwright/test";
+import test, { expect } from "@playwright/test";
 import { HomePage } from "../pages/Home.po";
 import { FormFieldsPage } from "../pages/Formfields.po";
 
@@ -13,7 +13,7 @@ test("Form fields", async ({ page }) => {
     await FormFieldsPage.fillEmailAs(page, "john@example.com");
     await FormFieldsPage.fillMessageAs(page, "Hello, this is a test message.");
     await FormFieldsPage.clickSubmit(page);
-    await FormFieldsPage.getFormTitle(page);
+    await expect( await FormFieldsPage.getFormTitle(page)).toBeVisible({ timeout: 5000 });
     // await FormFieldsPage.handleAlert(page, 'accept');
 
 });
@@ -30,7 +30,7 @@ test("Navigate back to home page from Form Fields", async ({ page }) => {
     await FormFieldsPage.fillMessageAs(page, "Hello, this is a test message.");
     await FormFieldsPage.clickSubmit(page);
     await FormFieldsPage.clickHome(page);
-    await HomePage.getHomeTitle(page);
+    await expect( await HomePage.getHomeTitle(page)).toBeVisible({ timeout: 5000 });
     // await FormFieldsPage.getFormTitle(page);
    
 });
