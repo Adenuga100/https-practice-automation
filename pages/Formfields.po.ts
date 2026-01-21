@@ -24,6 +24,12 @@ export class FormFieldsPage {
        return await messageInput.fill(text);
     }
 
+    static async clickHome(page: Page): Promise<void> {
+        let home = page.getByText('Home'); 
+        await home.scrollIntoViewIfNeeded();
+       return await home.click();
+    }
+
     static async clickSubmit(page: Page): Promise<void> {
         let submitButton = page.locator('[id="submit-btn"]'); 
         await submitButton.scrollIntoViewIfNeeded();
