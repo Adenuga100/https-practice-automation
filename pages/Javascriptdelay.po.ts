@@ -7,6 +7,12 @@ export class JavascriptDelayPage {
        return await jsDelayButton.click();
     }
 
+    static async clickHomeMenus(page: Page): Promise<void> {
+        let jsDelayButton = page.getByText('Home'); 
+        await jsDelayButton.scrollIntoViewIfNeeded();
+       return await jsDelayButton.click();
+    }
+
     static   getTittle(page: Page): Locator {
         let jsDelayButton = page.getByText('Liftoff!'); 
         return jsDelayButton;
