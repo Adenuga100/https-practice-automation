@@ -13,12 +13,10 @@ export class HomePage {
     return await ajaxDataLoadingBtn.click();
   }
 
-  static  getHomeTitle(page: Page): Locator {
-    const homeTitle = page.getByText('Welcome to your software automation practice website!'); 
+  static async getHomeTitle(page: Page): Promise<Locator> {
+    let formTitle = page.getByText('Welcome to your software automation practice website! '); 
+     await formTitle.scrollIntoViewIfNeeded();
+     return formTitle;
 
-   return homeTitle;
-
-  }
-
-   
+    }
 }
