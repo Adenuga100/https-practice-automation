@@ -12,4 +12,10 @@ export class HomePage {
         let ajaxDataLoadingBtn = page.getByText('Load AJAX Data'); 
        return await ajaxDataLoadingBtn.click();
     }
+
+    static async getHomeTittle(page: Page): Promise<Locator> {
+        let source = page.getByText('Welcome to your software automation practice website!'); 
+       await source.scrollIntoViewIfNeeded();
+      return source;
+    }
 }
