@@ -4,6 +4,7 @@ import { PopupsPage } from "../pages/Popups.po";
 
 test("Alert Popup", async ({ page }) => {
     await page.goto("/");
+    
     await HomePage.clickNameButtonsAs(page, "Popups");
     await PopupsPage.clickAlertButtonsAS(page, "Alert Popup");
     await expect(await PopupsPage.getPopupsTitle(page, "Alert Popup")).toBeVisible();
