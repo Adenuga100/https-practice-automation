@@ -20,10 +20,9 @@ export class HomePage {
 
     }
 
-  static  getHomeTitle(page: Page): Locator {
-    const homeTitle = page.getByText('Welcome to your software automation practice website!'); 
-
-   return homeTitle;
-
-  }
+    static async getHomeTittle(page: Page): Promise<Locator> {
+        let source = page.getByText('Welcome to your software automation practice website!'); 
+       await source.scrollIntoViewIfNeeded();
+      return source;
+    }
 }
