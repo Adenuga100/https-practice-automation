@@ -20,10 +20,5 @@ export class HomePage {
 
     }
 
-  static  getHomeTitle(page: Page): Locator {
-    const homeTitle = page.getByText('Welcome to your software automation practice website!'); 
-
-   return homeTitle;
-
-  }
+  
 }
