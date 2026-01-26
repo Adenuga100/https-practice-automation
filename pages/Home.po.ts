@@ -20,5 +20,13 @@ export class HomePage {
 
     }
 
+<<<<<<< HEAD
   
+=======
+    static async getHomeTittle(page: Page): Promise<Locator> {
+        let source = page.getByText('Welcome to your software automation practice website!'); 
+       await source.scrollIntoViewIfNeeded();
+      return source;
+    }
+>>>>>>> e62fb9c5ee50d4f63ca2388e069cbf1395676a43
 }
